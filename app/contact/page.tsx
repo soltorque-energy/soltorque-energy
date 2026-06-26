@@ -52,7 +52,16 @@ export default function ContactPage() {
               support for overseas B2B customers.
             </p>
             <div className="mt-8 grid gap-3">
-              <ButtonLink href={site.whatsappUrl}>WhatsApp</ButtonLink>
+              <ButtonLink
+                href={site.whatsappUrl}
+                eventName="whatsapp_click"
+                eventParams={{
+                  button_location: "contact_page",
+                  link_url: site.whatsappUrl
+                }}
+              >
+                WhatsApp
+              </ButtonLink>
               <ButtonLink
                 href={`mailto:${site.email}?subject=Solar%20mounting%20hardware%20inquiry&body=Hello%20SolTorque%20Energy%2C%0A%0AI%20would%20like%20to%20check%20the%20following%20product.%0A%0AProduct%20photo%3A%0ASpecification%3A%0AQuantity%3A%0AApplication%20scenario%3A%0A`}
                 variant="secondary"

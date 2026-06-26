@@ -38,6 +38,20 @@ lib/site.ts
 
 Replace `email` and `whatsappUrl` with the final business contact details before publishing.
 
+## Google Analytics 4
+
+Create a GA4 Web data stream, then set this environment variable in Netlify:
+
+```bash
+NEXT_PUBLIC_GA_MEASUREMENT_ID=G-XXXXXXXXXX
+```
+
+Tracked events:
+
+- `page_view`
+- `whatsapp_click`
+- `pdf_download`
+
 ## Downloads
 
 PDF downloads are stored in:

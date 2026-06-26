@@ -15,7 +15,17 @@ export function CtaBand() {
           </p>
         </div>
         <div className="flex flex-col gap-3 sm:flex-row">
-          <ButtonLink href={site.whatsappUrl} variant="light">WhatsApp</ButtonLink>
+          <ButtonLink
+            href={site.whatsappUrl}
+            variant="light"
+            eventName="whatsapp_click"
+            eventParams={{
+              button_location: "cta_band",
+              link_url: site.whatsappUrl
+            }}
+          >
+            WhatsApp
+          </ButtonLink>
           <ButtonLink
             href={`mailto:${site.email}?subject=Solar%20mounting%20hardware%20inquiry`}
             variant="secondary"

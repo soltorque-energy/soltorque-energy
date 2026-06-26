@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { DownloadLink } from "@/components/DownloadLink";
 import { PageHeader } from "@/components/PageHeader";
 import { downloads } from "@/lib/products";
 
@@ -24,13 +25,11 @@ export default function DownloadsPage() {
               <h2 className="mt-3 text-2xl font-bold text-navy">{download.title}</h2>
               <p className="mt-4 text-sm leading-6 text-slate-600">{download.description}</p>
               <p className="mt-4 text-xs text-slate-500">{download.fileLabel}</p>
-              <a
+              <DownloadLink
                 href={download.href}
-                download
-                className="mt-6 inline-flex rounded-md bg-navy px-5 py-3 text-sm font-semibold text-white transition hover:bg-[#123a68]"
-              >
-                Download PDF
-              </a>
+                fileLabel={download.fileLabel}
+                title={download.title}
+              />
             </article>
           ))}
         </div>
