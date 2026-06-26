@@ -13,13 +13,16 @@ export const metadata: Metadata = {
   },
   description: site.description,
   keywords: seoKeywords,
-  openGraph: {
-    title: `${site.shortName} | Solar Mounting Hardware Supplier`,
-    description: site.description,
-    url: site.url,
-    siteName: site.shortName,
-    type: "website"
-  }
+ openGraph: {
+  title: `${site.shortName} | Solar Mounting Hardware Supplier`,
+  description: site.description,
+  url: site.url,
+  siteName: site.shortName,
+  type: "website"
+},
+verification: {
+  google: "NUkdmHDv--Hn-q44KFgA4qISK-Cmkp-19T9jcEUMDP8"
+}
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
