@@ -11,7 +11,8 @@ declare global {
   }
 }
 
-const GA_MEASUREMENT_ID = process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID;
+const GA_MEASUREMENT_ID =
+  process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID || "G-63VZCBNPM2";
 
 export function trackEvent(eventName: string, parameters?: Record<string, unknown>) {
   if (!GA_MEASUREMENT_ID || typeof window === "undefined" || !window.gtag) {
