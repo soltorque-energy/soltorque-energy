@@ -3,6 +3,7 @@ import Image from "next/image";
 import { CtaBand } from "@/components/CtaBand";
 import { PageHeader } from "@/components/PageHeader";
 import { productCategories, productRange } from "@/lib/products";
+import { seoProductPages } from "@/lib/seo-products";
 
 export const metadata: Metadata = {
   title: "Product Range - Solar Mounting Hardware and PV Accessories",
@@ -52,6 +53,31 @@ export default function ProductRangePage() {
                   ))}
                 </ul>
               </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="section-y bg-white">
+        <div className="container-x">
+          <p className="eyebrow">Product inquiry pages</p>
+          <h2 className="mt-3 text-3xl font-bold text-navy">
+            Specific product pages for Google search and B2B inquiry
+          </h2>
+          <p className="mt-4 max-w-3xl text-base leading-7 text-slate-600">
+            These pages help buyers check common product types before sending photos,
+            specifications and quantity for matching.
+          </p>
+          <div className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+            {seoProductPages.map((page) => (
+              <a
+                key={page.slug}
+                href={`/${page.slug}`}
+                className="rounded-lg border border-slate-200 bg-slate-50 p-5 transition hover:border-solar hover:bg-white hover:shadow-soft"
+              >
+                <h3 className="text-lg font-bold text-navy">{page.title}</h3>
+                <p className="mt-3 text-sm leading-6 text-slate-600">{page.metaDescription}</p>
+              </a>
             ))}
           </div>
         </div>
