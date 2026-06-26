@@ -10,3 +10,6 @@ dist/
 .agents/
 .pnpm-store/
 outputs/
+
+# Local Netlify folder
+.netlify
