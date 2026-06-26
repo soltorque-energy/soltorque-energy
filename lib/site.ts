@@ -1,7 +1,7 @@
 export const site = {
   name: "SolTorque Energy Co., Ltd.",
   shortName: "SolTorque Energy",
-  url: "https://www.soltorque-energy.com",
+  url: "https://soltorque-energy.netlify.app",
   description:
     "SolTorque Energy Co., Ltd. supplies project-use solar mounting hardware and related PV accessories from China-side supply resources.",
   email: "yankangniu@gmail.com",

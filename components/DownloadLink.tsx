@@ -14,7 +14,7 @@ export function DownloadLink({ href, fileLabel, title }: DownloadLinkProps) {
       href={href}
       download
       onClick={() =>
-        trackEvent("pdf_download", {
+        trackEvent("catalog_download", {
           file_name: fileLabel,
           link_url: href,
           item_name: title

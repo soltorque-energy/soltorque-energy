@@ -50,7 +50,7 @@ Tracked events:
 
 - `page_view`
 - `whatsapp_click`
-- `pdf_download`
+- `catalog_download`
 
 ## Downloads
 
