@@ -82,7 +82,10 @@ export default function ProductRangePage() {
           </div>
         </div>
       </section>
-      <CtaBand />
+      <CtaBand
+        whatsappMessage="Hi, I am interested in SolTorque product range for solar mounting hardware and PV accessories."
+        buttonLocation="product_range_cta_band"
+      />
     </>
   );
 }

@@ -9,9 +9,10 @@ import {
   defaultFaqs,
   getRelatedSeoPages,
   getSeoProductPage,
+  getSeoProductWhatsAppMessage,
   seoProductPages
 } from "@/lib/seo-products";
-import { site } from "@/lib/site";
+import { createWhatsAppUrl, site } from "@/lib/site";
 
 type ProductSeoPageProps = {
   params: Promise<{
@@ -88,6 +89,8 @@ export default async function ProductSeoPage({ params }: ProductSeoPageProps) {
   const fullCatalog = downloads.find((download) => download.title === "Full Catalog") ?? downloads[0];
   const faqs = page.faqs ?? defaultFaqs;
   const relatedPages = getRelatedSeoPages(page);
+  const whatsappMessage = getSeoProductWhatsAppMessage(page);
+  const whatsappUrl = createWhatsAppUrl(whatsappMessage);
   const recommendedProducts = page.recommendedProducts ?? [
     page.title,
     "Related mounting hardware",
@@ -141,12 +144,13 @@ export default async function ProductSeoPage({ params }: ProductSeoPageProps) {
             </p>
             <div className="mt-8 flex flex-col gap-3 sm:flex-row">
               <ButtonLink
-                href={site.whatsappUrl}
+                href={whatsappUrl}
                 eventName="whatsapp_click"
                 eventParams={{
                   button_location: page.slug,
-                  link_url: site.whatsappUrl,
-                  product_page: page.slug
+                  link_url: whatsappUrl,
+                  product_page: page.slug,
+                  whatsapp_message: whatsappMessage
                 }}
               >
                 WhatsApp
@@ -283,13 +287,14 @@ export default async function ProductSeoPage({ params }: ProductSeoPageProps) {
             </div>
           </div>
           <ButtonLink
-            href={site.whatsappUrl}
+            href={whatsappUrl}
             variant="light"
             eventName="whatsapp_click"
             eventParams={{
               button_location: `${page.slug}_bottom_cta`,
-              link_url: site.whatsappUrl,
-              product_page: page.slug
+              link_url: whatsappUrl,
+              product_page: page.slug,
+              whatsapp_message: whatsappMessage
             }}
           >
             WhatsApp

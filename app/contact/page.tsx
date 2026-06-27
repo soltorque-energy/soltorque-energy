@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { ButtonLink } from "@/components/ButtonLink";
 import { PageHeader } from "@/components/PageHeader";
 import { seoProductPages } from "@/lib/seo-products";
-import { site } from "@/lib/site";
+import { createWhatsAppUrl, site } from "@/lib/site";
 
 export const metadata: Metadata = {
   title: "Contact - Send Product Photo Specification and Quantity",
@@ -30,6 +30,10 @@ const contactSeoLinks = seoProductPages.filter((page) =>
 );
 
 export default function ContactPage() {
+  const whatsappMessage =
+    "Hi, I am interested in SolTorque solar mounting hardware and PV accessories.";
+  const whatsappUrl = createWhatsAppUrl(whatsappMessage);
+
   return (
     <>
       <PageHeader
@@ -65,11 +69,12 @@ export default function ContactPage() {
             </p>
             <div className="mt-8 grid gap-3">
               <ButtonLink
-                href={site.whatsappUrl}
+                href={whatsappUrl}
                 eventName="whatsapp_click"
                 eventParams={{
                   button_location: "contact_page",
-                  link_url: site.whatsappUrl
+                  link_url: whatsappUrl,
+                  whatsapp_message: whatsappMessage
                 }}
               >
                 WhatsApp

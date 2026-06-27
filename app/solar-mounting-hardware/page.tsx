@@ -74,7 +74,10 @@ export default function SolarMountingHardwarePage() {
           </div>
         </div>
       </section>
-      <CtaBand />
+      <CtaBand
+        whatsappMessage="Hi, I am interested in solar mounting hardware."
+        buttonLocation="solar_mounting_hardware_cta_band"
+      />
     </>
   );
 }

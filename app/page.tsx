@@ -149,7 +149,10 @@ export default function Home() {
         </div>
       </section>
 
-      <CtaBand />
+      <CtaBand
+        whatsappMessage="Hi, I am interested in SolTorque solar mounting hardware."
+        buttonLocation="home_cta_band"
+      />
     </>
   );
 }

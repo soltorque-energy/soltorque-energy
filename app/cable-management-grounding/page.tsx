@@ -56,7 +56,10 @@ export default function CableManagementGroundingPage() {
           </div>
         </div>
       </section>
-      <CtaBand />
+      <CtaBand
+        whatsappMessage="Hi, I am interested in solar cable management and grounding accessories."
+        buttonLocation="cable_management_grounding_cta_band"
+      />
     </>
   );
 }

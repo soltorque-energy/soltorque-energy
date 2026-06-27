@@ -63,7 +63,10 @@ export default function PvElectricalAccessoriesPage() {
           </div>
         </div>
       </section>
-      <CtaBand />
+      <CtaBand
+        whatsappMessage="Hi, I am interested in MC4 connectors and PV electrical accessories."
+        buttonLocation="pv_electrical_accessories_cta_band"
+      />
     </>
   );
 }

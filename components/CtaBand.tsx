@@ -1,7 +1,17 @@
 import { ButtonLink } from "@/components/ButtonLink";
-import { site } from "@/lib/site";
+import { createWhatsAppUrl, site } from "@/lib/site";
 
-export function CtaBand() {
+type CtaBandProps = {
+  whatsappMessage?: string;
+  buttonLocation?: string;
+};
+
+export function CtaBand({
+  whatsappMessage = "Hi, I am interested in SolTorque solar mounting hardware.",
+  buttonLocation = "cta_band"
+}: CtaBandProps) {
+  const whatsappUrl = createWhatsAppUrl(whatsappMessage);
+
   return (
     <section className="bg-navy">
       <div className="container-x grid gap-6 py-10 text-white lg:grid-cols-[1fr_auto] lg:items-center">
@@ -16,12 +26,13 @@ export function CtaBand() {
         </div>
         <div className="flex flex-col gap-3 sm:flex-row">
           <ButtonLink
-            href={site.whatsappUrl}
+            href={whatsappUrl}
             variant="light"
             eventName="whatsapp_click"
             eventParams={{
-              button_location: "cta_band",
-              link_url: site.whatsappUrl
+              button_location: buttonLocation,
+              link_url: whatsappUrl,
+              whatsapp_message: whatsappMessage
             }}
           >
             WhatsApp

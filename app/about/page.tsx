@@ -70,7 +70,10 @@ export default function AboutPage() {
           </div>
         </div>
       </section>
-      <CtaBand />
+      <CtaBand
+        whatsappMessage="Hi, I am interested in SolTorque solar mounting hardware supply support."
+        buttonLocation="about_cta_band"
+      />
     </>
   );
 }

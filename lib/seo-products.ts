@@ -17,6 +17,7 @@ export type SeoProductPage = {
   commonProducts?: string[];
   relatedSlugs?: string[];
   faqs?: FaqItem[];
+  whatsappMessage?: string;
 };
 
 export type FaqItem = {
@@ -1053,6 +1054,193 @@ export const seoProductPages: SeoProductPage[] = [
     ],
     image: "/images/products/grounding-copper-braid.jpg",
     alt: "Grounding and earthing accessories for solar projects"
+  },
+  {
+    slug: "no-drilling-solar-roof-clamp",
+    title: "No-Drilling Solar Roof Clamp",
+    seoTitle: "No-Drilling Solar Roof Clamp | SolTorque Energy",
+    metaDescription:
+      "No-drilling solar roof clamp inquiry page for metal roof PV mounting. Check roof clamp options by roof photo, roof profile, panel size and quantity.",
+    h1: "No-Drilling Solar Roof Clamp",
+    keyword: "no-drilling solar roof clamp",
+    intro:
+      "No-drilling solar roof clamps are commonly checked for selected metal roof PV mounting applications where buyers want to avoid roof sheet drilling. Final suitable model should be confirmed according to actual roof sheet profile.",
+    applications: [
+      "Selected standing seam or suitable metal roof profiles",
+      "Rooftop PV mounting where drilling avoidance is preferred",
+      "Roof clamp matching for metal roof solar installation",
+      "Product matching by fixing photos, roof profile and project quantity"
+    ],
+    specifications: [
+      "Clamp shape should match the actual roof sheet profile",
+      "Rail connection method and bolt size should be confirmed",
+      "Panel size and layout affect product quantity and matching",
+      "Final suitable model should be confirmed according to actual roof sheet profile."
+    ],
+    materials: [
+      "Aluminum alloy roof clamp options according to product type",
+      "Stainless steel bolts and nuts according to project needs",
+      "EPDM or protective parts can be checked when applicable"
+    ],
+    quoteInfo: [
+      "Roof photo",
+      "Roof profile or roof sheet drawing",
+      "Panel size",
+      "Quantity",
+      "Fixing photos or current installation reference if available"
+    ],
+    customerTypes: ["solar installer", "EPC", "supplier", "distributor"],
+    recommendedProducts: [
+      "No-drilling solar roof clamps",
+      "Metal roof clamps",
+      "Solar mounting rails",
+      "T bolts / nuts / fasteners",
+      "Cable clips",
+      "Grounding / earthing accessories"
+    ],
+    commonProducts: [
+      "Roof clamps / brackets",
+      "Solar mounting rails",
+      "Mid clamps",
+      "End clamps",
+      "T bolts / nuts / fasteners",
+      "Cable clips / cable management parts",
+      "Grounding / earthing accessories"
+    ],
+    relatedSlugs: [
+      "solar-roof-clamp-supplier",
+      "solar-mounting-solution-single-sheet-metal-roof",
+      "metal-roof-solar-clamp-without-drilling",
+      "solar-mounting-hardware-for-rooftop-solar-projects"
+    ],
+    image: "/images/products/metal-roof-clamps.jpg",
+    alt: "No-drilling solar roof clamp for selected metal roof profiles",
+    whatsappMessage: "Hi, I am interested in no-drilling solar roof clamps."
+  },
+  {
+    slug: "solar-mounting-solution-single-sheet-metal-roof",
+    title: "Solar Mounting Solution for Single Sheet Metal Roof",
+    seoTitle: "Solar Mounting Solution for Single Sheet Metal Roof | SolTorque Energy",
+    metaDescription:
+      "Solar mounting solution for single sheet metal roof inquiries. Check roof clamp and metal roof mounting options by roof photo, profile, panel size and quantity.",
+    h1: "Solar Mounting Solution for Single Sheet Metal Roof",
+    keyword: "solar mounting solution for single sheet metal roof",
+    intro:
+      "For single sheet metal roof solar mounting inquiries, roof clamp selection depends on the actual sheet profile and fixing position. Final suitable model should be confirmed according to actual roof sheet profile.",
+    applications: [
+      "Single sheet metal roof PV mounting inquiries",
+      "Metal roof clamp and bracket matching",
+      "No-drilling or low-penetration roof mounting checks where suitable",
+      "Solar panel fixing based on roof photos and profile details"
+    ],
+    specifications: [
+      "Roof sheet profile, rib height and rib width should be checked",
+      "Panel size and mounting layout affect clamp and rail quantity",
+      "Fixing photos help confirm whether a similar roof clamp can be checked",
+      "Final suitable model should be confirmed according to actual roof sheet profile."
+    ],
+    materials: [
+      "Aluminum alloy roof clamp or bracket options according to selected model",
+      "Stainless steel fasteners according to project needs",
+      "EPDM rubber parts can be checked where waterproof protection is needed"
+    ],
+    quoteInfo: [
+      "Roof photo",
+      "Roof profile",
+      "Panel size",
+      "Quantity",
+      "Fixing photos or target installation method"
+    ],
+    customerTypes: ["solar installer", "EPC", "supplier", "distributor"],
+    recommendedProducts: [
+      "Metal roof clamps",
+      "No-drilling roof clamps",
+      "Solar mounting rails",
+      "Mid clamps",
+      "End clamps",
+      "T bolts / nuts / fasteners"
+    ],
+    commonProducts: [
+      "Roof clamps / brackets",
+      "Solar mounting rails",
+      "Mid clamps",
+      "End clamps",
+      "T bolts / nuts / fasteners",
+      "Cable clips / cable management parts",
+      "Grounding / earthing accessories"
+    ],
+    relatedSlugs: [
+      "solar-roof-clamp-supplier",
+      "no-drilling-solar-roof-clamp",
+      "metal-roof-solar-clamp-without-drilling",
+      "solar-mounting-rail-supplier"
+    ],
+    image: "/images/products/metal-roof-mounting-system.jpg",
+    alt: "Solar mounting solution for single sheet metal roof",
+    whatsappMessage:
+      "Hi, I am interested in solar mounting solutions for single sheet metal roof."
+  },
+  {
+    slug: "metal-roof-solar-clamp-without-drilling",
+    title: "Metal Roof Solar Clamp Without Drilling",
+    seoTitle: "Metal Roof Solar Clamp Without Drilling | SolTorque Energy",
+    metaDescription:
+      "Metal roof solar clamp without drilling inquiry page. Check suitable roof clamp options by roof photo, roof sheet profile, panel size and quantity.",
+    h1: "Metal Roof Solar Clamp Without Drilling",
+    keyword: "metal roof solar clamp without drilling",
+    intro:
+      "Metal roof solar clamp without drilling inquiries should be checked carefully against the real roof sheet shape. Final suitable model should be confirmed according to actual roof sheet profile.",
+    applications: [
+      "Selected metal roof solar mounting projects",
+      "Roof clamp checks where drilling is not preferred",
+      "PV module fixing with rails, clamps and matched fasteners",
+      "Supplier and installer inquiries based on roof fixing photos"
+    ],
+    specifications: [
+      "Actual roof sheet profile is the key matching reference",
+      "Clamp opening, fixing method and rail connection should be confirmed",
+      "Panel size, layout and quantity should be checked before quotation",
+      "Final suitable model should be confirmed according to actual roof sheet profile."
+    ],
+    materials: [
+      "Aluminum alloy clamp options according to selected model",
+      "Stainless steel fasteners for outdoor PV mounting",
+      "EPDM or protective parts can be checked according to roof contact area"
+    ],
+    quoteInfo: [
+      "Roof photo",
+      "Roof profile",
+      "Panel size",
+      "Quantity",
+      "Fixing photos showing the target clamp position"
+    ],
+    customerTypes: ["solar installer", "EPC", "supplier", "distributor"],
+    recommendedProducts: [
+      "Metal roof solar clamps",
+      "No-drilling roof clamps",
+      "Solar mounting rails",
+      "T bolts / nuts / fasteners",
+      "Mid clamps",
+      "End clamps"
+    ],
+    commonProducts: [
+      "Roof clamps / brackets",
+      "Solar mounting rails",
+      "Mid clamps",
+      "End clamps",
+      "T bolts / nuts / fasteners",
+      "Cable clips / cable management parts",
+      "Grounding / earthing accessories"
+    ],
+    relatedSlugs: [
+      "solar-roof-clamp-supplier",
+      "no-drilling-solar-roof-clamp",
+      "solar-mounting-solution-single-sheet-metal-roof",
+      "solar-mounting-hardware-for-rooftop-solar-projects"
+    ],
+    image: "/images/products/metal-roof-clamps.jpg",
+    alt: "Metal roof solar clamp without drilling for PV mounting inquiries",
+    whatsappMessage: "Hi, I am interested in metal roof solar clamps without drilling."
   }
 ];
 
@@ -1071,4 +1259,48 @@ export function getRelatedSeoPages(page: SeoProductPage) {
   return relatedSlugs
     .map((slug) => seoProductPages.find((item) => item.slug === slug))
     .filter((item): item is SeoProductPage => Boolean(item));
+}
+
+const whatsappMessageBySlug: Record<string, string> = {
+  "solar-mid-clamp-supplier": "Hi, I am interested in solar mid clamps.",
+  "solar-end-clamp-supplier": "Hi, I am interested in solar end clamps.",
+  "solar-mounting-rail-supplier": "Hi, I am interested in solar mounting rails.",
+  "solar-roof-clamp-supplier": "Hi, I am interested in solar roof clamps.",
+  "solar-t-bolt-supplier": "Hi, I am interested in solar T bolts.",
+  "mc4-connector-supplier": "Hi, I am interested in MC4 connectors.",
+  "solar-cable-clip-supplier": "Hi, I am interested in solar cable clips.",
+  "solar-grounding-clip-supplier": "Hi, I am interested in solar grounding clips.",
+  "gi-slotted-channel-supplier": "Hi, I am interested in GI slotted channel.",
+  "pv-mounting-accessories-supplier": "Hi, I am interested in PV mounting accessories.",
+  "solar-mounting-accessories-uae-projects":
+    "Hi, I am interested in solar mounting accessories for UAE projects.",
+  "solar-mounting-hardware-supplier-oman":
+    "Hi, I am interested in solar mounting hardware for Oman projects.",
+  "pv-accessories-supplier-qatar": "Hi, I am interested in PV accessories for Qatar.",
+  "solar-mounting-hardware-supplier-south-africa":
+    "Hi, I am interested in solar mounting hardware for South Africa.",
+  "solar-mounting-accessories-for-solar-installers":
+    "Hi, I am interested in solar mounting accessories for solar installers.",
+  "solar-mounting-hardware-for-epc-contractors":
+    "Hi, I am interested in solar mounting hardware for EPC contractors.",
+  "solar-mounting-hardware-for-rooftop-solar-projects":
+    "Hi, I am interested in solar mounting hardware for rooftop solar projects.",
+  "solar-mounting-hardware-for-solar-carport-projects":
+    "Hi, I am interested in solar mounting hardware for solar carport projects.",
+  "pv-accessories-for-solar-equipment-suppliers":
+    "Hi, I am interested in PV accessories for solar equipment suppliers.",
+  "solar-mounting-accessories-for-distributors":
+    "Hi, I am interested in solar mounting accessories for distributors.",
+  "solar-cable-management-accessories-supplier":
+    "Hi, I am interested in solar cable management accessories.",
+  "grounding-and-earthing-accessories-for-solar-projects":
+    "Hi, I am interested in grounding and earthing accessories for solar projects."
+};
+
+export function getSeoProductWhatsAppMessage(page: SeoProductPage) {
+  return (
+    page.whatsappMessage ??
+    whatsappMessageBySlug[page.slug] ??
+    `Hi, I am interested in ${page.title}.`
+  );
 }
