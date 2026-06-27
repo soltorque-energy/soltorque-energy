@@ -4,6 +4,7 @@ import { ButtonLink } from "@/components/ButtonLink";
 import { CtaBand } from "@/components/CtaBand";
 import { ProductCard } from "@/components/ProductCard";
 import { capabilityPoints, productCategories, productRange } from "@/lib/products";
+import { seoProductPages } from "@/lib/seo-products";
 import { site } from "@/lib/site";
 
 export const metadata: Metadata = {
@@ -11,6 +12,17 @@ export const metadata: Metadata = {
   description:
     "SolTorque Energy Co., Ltd. supports overseas B2B customers with project-use solar mounting hardware and related PV accessories from China-side supply resources."
 };
+
+const featuredSeoPages = seoProductPages.filter((page) =>
+  [
+    "solar-mid-clamp-supplier",
+    "mc4-connector-supplier",
+    "solar-mounting-hardware-for-rooftop-solar-projects",
+    "solar-mounting-accessories-for-solar-installers",
+    "solar-mounting-hardware-supplier-oman",
+    "pv-accessories-supplier-qatar"
+  ].includes(page.slug)
+);
 
 export default function Home() {
   return (
@@ -107,6 +119,31 @@ export default function Home() {
                   <h3 className="font-semibold text-navy">{item.group}</h3>
                 </div>
               </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="section-y bg-white">
+        <div className="container-x">
+          <p className="eyebrow">SEO product pages</p>
+          <h2 className="mt-3 text-3xl font-bold tracking-tight text-navy">
+            Search by product, project type or market need
+          </h2>
+          <p className="mt-4 max-w-3xl text-base leading-7 text-slate-600">
+            Buyers can start from specific product pages, project application pages or
+            country-related inquiry pages before sending photos, specifications and quantity.
+          </p>
+          <div className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+            {featuredSeoPages.map((page) => (
+              <a
+                key={page.slug}
+                href={`/${page.slug}`}
+                className="rounded-lg border border-slate-200 bg-slate-50 p-5 transition hover:border-solar hover:bg-white hover:shadow-soft"
+              >
+                <h3 className="text-lg font-bold text-navy">{page.title}</h3>
+                <p className="mt-3 text-sm leading-6 text-slate-600">{page.metaDescription}</p>
+              </a>
             ))}
           </div>
         </div>

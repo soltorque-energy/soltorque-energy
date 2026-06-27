@@ -5,7 +5,12 @@ import { notFound } from "next/navigation";
 import { ButtonLink } from "@/components/ButtonLink";
 import { DownloadLink } from "@/components/DownloadLink";
 import { downloads } from "@/lib/products";
-import { getSeoProductPage, seoProductPages } from "@/lib/seo-products";
+import {
+  defaultFaqs,
+  getRelatedSeoPages,
+  getSeoProductPage,
+  seoProductPages
+} from "@/lib/seo-products";
 import { site } from "@/lib/site";
 
 type ProductSeoPageProps = {
@@ -81,9 +86,45 @@ export default async function ProductSeoPage({ params }: ProductSeoPageProps) {
   }
 
   const fullCatalog = downloads.find((download) => download.title === "Full Catalog") ?? downloads[0];
+  const faqs = page.faqs ?? defaultFaqs;
+  const relatedPages = getRelatedSeoPages(page);
+  const recommendedProducts = page.recommendedProducts ?? [
+    page.title,
+    "Related mounting hardware",
+    "Matched fasteners",
+    "Cable management and grounding accessories"
+  ];
+  const commonProducts = page.commonProducts ?? [
+    "Solar mounting rails",
+    "Mid clamps",
+    "End clamps",
+    "Roof clamps / brackets",
+    "T bolts / nuts / fasteners",
+    "MC4 connectors",
+    "Cable clips / cable management parts",
+    "Grounding / earthing accessories",
+    "GI slotted channel / strut channel"
+  ];
+  const faqSchema = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: faqs.map((faq) => ({
+      "@type": "Question",
+      name: faq.question,
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: faq.answer
+      }
+    }))
+  };
 
   return (
     <>
+      <script
+        type="application/ld+json"
+        suppressHydrationWarning
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+      />
       <section className="border-b border-slate-200 bg-white">
         <div className="container-x grid gap-10 py-12 sm:py-16 lg:grid-cols-[1fr_420px] lg:items-center">
           <div>
@@ -130,6 +171,8 @@ export default async function ProductSeoPage({ params }: ProductSeoPageProps) {
 
       <section className="section-y bg-slate-50">
         <div className="container-x grid gap-6 lg:grid-cols-2">
+          <DetailSection title="Recommended product range" items={recommendedProducts} />
+          <DetailSection title="Common products" items={commonProducts} />
           <DetailSection title="Application scenarios" items={page.applications} />
           <DetailSection title="Common specifications" items={page.specifications} />
           <DetailSection title="Materials / surface treatment" items={page.materials} />
@@ -164,7 +207,7 @@ export default async function ProductSeoPage({ params }: ProductSeoPageProps) {
           <aside className="rounded-lg border border-slate-200 bg-slate-50 p-6">
             <h2 className="text-xl font-bold text-navy">PDF catalog</h2>
             <p className="mt-3 text-sm leading-6 text-slate-600">
-              Download the full catalog to review detailed product pictures and specification
+              Download the full catalog to check detailed product pictures and specification
               references.
             </p>
             <DownloadLink
@@ -173,6 +216,50 @@ export default async function ProductSeoPage({ params }: ProductSeoPageProps) {
               title={`${page.title} - ${fullCatalog.title}`}
             />
           </aside>
+        </div>
+      </section>
+
+      <section className="section-y bg-slate-50">
+        <div className="container-x">
+          <p className="eyebrow">Related pages</p>
+          <h2 className="mt-3 text-3xl font-bold tracking-tight text-navy">
+            Related product and project pages
+          </h2>
+          <p className="mt-4 max-w-3xl text-base leading-7 text-slate-600">
+            Continue checking related solar mounting hardware and PV accessories before
+            sending an inquiry.
+          </p>
+          <div className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+            {relatedPages.map((relatedPage) => (
+              <Link
+                key={relatedPage.slug}
+                href={`/${relatedPage.slug}`}
+                className="rounded-lg border border-slate-200 bg-white p-5 transition hover:border-solar hover:shadow-soft"
+              >
+                <h3 className="text-base font-bold text-navy">{relatedPage.title}</h3>
+                <p className="mt-3 text-sm leading-6 text-slate-600">
+                  {relatedPage.metaDescription}
+                </p>
+              </Link>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="section-y bg-white">
+        <div className="container-x">
+          <p className="eyebrow">FAQ</p>
+          <h2 className="mt-3 text-3xl font-bold tracking-tight text-navy">
+            Common questions before inquiry
+          </h2>
+          <div className="mt-8 grid gap-4 lg:grid-cols-2">
+            {faqs.map((faq) => (
+              <div key={faq.question} className="rounded-lg border border-slate-200 bg-slate-50 p-6">
+                <h3 className="text-base font-bold text-navy">{faq.question}</h3>
+                <p className="mt-3 text-sm leading-6 text-slate-600">{faq.answer}</p>
+              </div>
+            ))}
+          </div>
         </div>
       </section>
 

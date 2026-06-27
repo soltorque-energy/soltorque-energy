@@ -5,6 +5,33 @@ import { Footer } from "@/components/Footer";
 import { seoKeywords, site } from "@/lib/site";
 import "./globals.css";
 
+const structuredData = [
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    name: site.name,
+    url: site.url,
+    email: site.email,
+    description: site.description,
+    contactPoint: [
+      {
+        "@type": "ContactPoint",
+        contactType: "sales",
+        email: site.email,
+        availableLanguage: ["English"]
+      }
+    ]
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    name: site.shortName,
+    url: site.url,
+    description: site.description,
+    inLanguage: "en"
+  }
+];
+
 export const metadata: Metadata = {
   metadataBase: new URL(site.url),
   title: {
@@ -29,6 +56,11 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html lang="en">
       <body className="min-h-screen antialiased">
+        <script
+          type="application/ld+json"
+          suppressHydrationWarning
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
+        />
         <Analytics />
         <Header />
         <main>{children}</main>

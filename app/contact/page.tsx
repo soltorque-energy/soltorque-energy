@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { ButtonLink } from "@/components/ButtonLink";
 import { PageHeader } from "@/components/PageHeader";
+import { seoProductPages } from "@/lib/seo-products";
 import { site } from "@/lib/site";
 
 export const metadata: Metadata = {
@@ -16,6 +17,17 @@ const inquiryItems = [
   "Application scenario, such as roof type, cable routing or grounding need",
   "Destination market or project requirement if available"
 ];
+
+const contactSeoLinks = seoProductPages.filter((page) =>
+  [
+    "solar-mounting-rail-supplier",
+    "mc4-connector-supplier",
+    "solar-cable-management-accessories-supplier",
+    "grounding-and-earthing-accessories-for-solar-projects",
+    "solar-mounting-hardware-for-epc-contractors",
+    "solar-mounting-accessories-for-distributors"
+  ].includes(page.slug)
+);
 
 export default function ContactPage() {
   return (
@@ -77,6 +89,31 @@ export default function ContactPage() {
                 contact details are confirmed.
               </p>
             </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="section-y bg-slate-50">
+        <div className="container-x">
+          <p className="eyebrow">Before sending inquiry</p>
+          <h2 className="mt-3 text-3xl font-bold tracking-tight text-navy">
+            Check related product pages
+          </h2>
+          <p className="mt-4 max-w-3xl text-base leading-7 text-slate-600">
+            These pages help clarify product type, application scenario and quotation
+            information before contacting SolTorque Energy.
+          </p>
+          <div className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+            {contactSeoLinks.map((page) => (
+              <a
+                key={page.slug}
+                href={`/${page.slug}`}
+                className="rounded-lg border border-slate-200 bg-white p-5 transition hover:border-solar hover:shadow-soft"
+              >
+                <h3 className="text-base font-bold text-navy">{page.title}</h3>
+                <p className="mt-3 text-sm leading-6 text-slate-600">{page.metaDescription}</p>
+              </a>
+            ))}
           </div>
         </div>
       </section>
